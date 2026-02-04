@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Undangan Pernikahan | Aris & Anindya</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+    
+    <!-- Batik Pattern Background -->
+    <style>
+        .batik-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23a0522d' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+        
+        .shadow-gold {
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .text-shadow-gold {
+            text-shadow: 0 2px 4px rgba(212, 175, 55, 0.5);
+        }
+        
+        .border-gold {
+            border-color: #d4af37;
+        }
+        
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f7ef8a 100%);
+        }
+    </style>
+</head>
+<body class="batik-bg">
+    <!-- Music Control -->
+    <div class="music-control" id="musicControl">
+        <i class="fas fa-play" id="musicIcon"></i>
+        <audio id="backgroundMusic" loop>
+            <source src="gamelanjawa.mp3" type="audio/mpeg">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+    </div>
+    
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <a href="#cover" class="nav-dot active" data-section="cover"></a>
+        <a href="#couple" class="nav-dot" data-section="couple"></a>
+        <a href="#events" class="nav-dot" data-section="events"></a>
+        <a href="#story" class="nav-dot" data-section="story"></a>
+        <a href="#location" class="nav-dot" data-section="location"></a>
+        <a href="#gallery" class="nav-dot" data-section="gallery"></a>
+        <a href="#rsvp" class="nav-dot" data-section="rsvp"></a>
+    </div>
+    
+    <!-- Cover Section -->
+    <section id="cover" class="cover-section">
+        <div class="cover-content">
+            <div class="cover-ornament top-left">
+                <div class="ornament-line"></div>
+                <div class="ornament-circle"></div>
+            </div>
+            <div class="cover-ornament top-right">
+                <div class="ornament-line"></div>
+                <div class="ornament-circle"></div>
+            </div>
+            
+            <div class="cover-text">
+                <h4 class="subtitle" data-aos="fade-up" data-aos-delay="100">ꦲꦸꦤ꧀ꦢꦤ꧀ꦒꦤ꧀ ꦥꦺꦂꦤꦶꦏꦲꦤ꧀</h4>
+                <h1 class="title" data-aos="fade-up" data-aos-delay="200">Undangan Pernikahan</h1>
+                <div class="couple-names" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="groom">Aris  <span class="amp">&</span></h2><ganti></ganti>
+                    <h2 class="bride">Anin</h2><ganti></ganti>
+                </div>
+                <p class="date" data-aos="fade-up" data-aos-delay="400">Jum'at, 16 Januari 2026</p><ganti>
+                
+                <div class="open-invitation" data-aos="fade-up" data-aos-delay="500">
+                    <button id="openBtn" class="open-btn">
+                        <i class="fas fa-envelope-open-text"></i> Buka Undangan
+                    </button>
+                </div>
+            </div>
+            
+            <div class="cover-ornament bottom-left">
+                <div class="ornament-circle"></div>
+                <div class="ornament-line"></div>
+            </div>
+            <div class="cover-ornament bottom-right">
+                <div class="ornament-circle"></div>
+                <div class="ornament-line"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Couple Section -->
+    <section id="couple" class="section couple-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h3 class="section-title">ꦩꦺꦩ꧀ꦥꦺꦭꦻ</h3>
+                <h2 class="section-subtitle">Mempelai</h2>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-heart"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="couple-container">
+                <div class="couple-card groom-card" data-aos="fade-right">
+                    <div class="couple-image">
+                        <div class="image-frame">
+                            <div class="image-placeholder groom-img">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="couple-info">
+                        <h3 class="couple-name">Aris Munandar</h3><ganti></ganti>
+                        <p class="couple-nickname">Aris</p><ganti></ganti>
+                        <p class="couple-parents">Putra pertama dari<br>Bapak Budi Santoso & Ibu Ratna Sari</p><ganti></ganti>
+                        <div class="couple-ornament">
+                            <div class="small-ornament"></div>
+                            <div class="small-ornament"></div>
+                            <div class="small-ornament"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="couple-center" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="center-ornament">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <p class="center-text">ꦧꦺꦂꦠꦺꦩꦸ ꦢꦺꦤ꧀ꦒꦤ꧀</p>
+                    <p class="center-text">Bertemu Dengan</p>
+                </div>
+                
+                <div class="couple-card bride-card" data-aos="fade-left">
+                    <div class="couple-image">
+                        <div class="image-frame">
+                            <div class="image-placeholder bride-img">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="couple-info">
+                        <h3 class="couple-name">Anindya Putri</h3><ganti></ganti>
+                        <p class="couple-nickname">Anin</p><ganti></ganti>
+                        <p class="couple-parents">Putri kedua dari<br>Bapak Gunawan Wibisono & Ibu Dyah Permata</p><ganti></ganti>
+                        <div class="couple-ornament">
+                            <div class="small-ornament"></div>
+                            <div class="small-ornament"></div>
+                            <div class="small-ornament"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Events Section -->
+    <section id="events" class="section events-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h3 class="section-title">ꦫꦤ꧀ꦒ꧀ꦏꦻꦪꦤ꧀ ꦲꦕꦫ</h3>
+                <h2 class="section-subtitle">Rangkaian Acara</h2>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-heart"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="countdown-container" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="countdown-title">Menuju Hari Bahagia</h3>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Hari</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Jam</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Detik</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="events-timeline">
+                <div class="event-card" data-aos="fade-right" data-aos-delay="200">
+                    <div class="event-icon">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <div class="event-details">
+                        <h3 class="event-title">Akad Nikah</h3>
+                        <p class="event-date"><i class="far fa-calendar"></i> Senin, 16 Februari 2026</p><ganti></ganti>
+                        <p class="event-time"><i class="far fa-clock"></i> Pukul 08:00 - 12:00 WIB</p><ganti></ganti>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Lokasi Akad<br>Universitas Kusuma Husada Surakarta</p><ganti></ganti>
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Aris+%26+Anin+-+Akad+Nikah&dates=20260216T080000/20260216T120000&details=Akad+Nikah+Aris+dan+Anin&location=Universitas Kusuma Husada Surakarta, Jl. Jaya Wijaya No..11, Kadipiro, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57136
+" target="_blank" class="calendar-btn"><format nama pengantin, acara, lokasi, waktu harus diperhatikan(ganti serius)>
+                            <i class="far fa-calendar-plus"></i> Tambahkan ke Kalender
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-aos="fade-left" data-aos-delay="300">
+                    <div class="event-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <div class="event-details">
+                        <h3 class="event-title">Resepsi Pernikahan</h3>
+                        <p class="event-date"><i class="far fa-calendar"></i> Selasa, 17 Februari 2026</p><ganti></ganti>
+                        <p class="event-time"><i class="far fa-clock"></i> Pukul 08:00 - 12:00 WIB</p><ganti></ganti>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Lokasi Resepsi<br>Universitas Kusuma Husada Surakarta</p><ganti></ganti>
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Arjuna+%26+Sinta+-+Resepsi&dates=20240615T040000Z/20240615T070000Z&details=Resepsi+Pernikahan+laki-lakiganti+dan+perempuanganti&location=Gedung+Serba+Guna+Sasono+Utomo,+Jl.+Kemasan+No.+123,+Surakarta" target="_blank" class="calendar-btn"><format nama pengantin, acara, lokasi, waktu harus diperhatikan(ganti serius)>
+                            <i class="far fa-calendar-plus"></i> Tambahkan ke Kalender
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dress-code" data-aos="fade-up" data-aos-delay="400">
+                <h3 class="dress-code-title">Kode Busana</h3>
+                <div class="dress-code-items">
+                    <div class="dress-code-item">
+                        <div class="dress-icon groom-color">
+                            <i class="fas fa-male"></i>
+                        </div>
+                        <p>Batik Jawa<br>(Hitam/Coklat)</p><ganti></ganti>
+                    </div>
+                    <div class="dress-code-item">
+                        <div class="dress-icon bride-color">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <p>Kebaya<br>(Emas/Cream)</p><ganti></ganti>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Kisah Cinta -->
+    <section id="story" class="section story-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h3 class="section-title">ꦏꦶꦱꦃ ꦏꦩꦶ</h3>
+                <h2 class="section-subtitle">Kisah Kami</h2>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-heart"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="timeline" data-aos="fade-up" data-aos-delay="100">
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-date">Juni 2019</div><ganti></ganti>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">ꦥꦺꦂꦗꦭꦤꦤ꧀</h3>
+                        <p class="timeline-text">Pertemuan pertama di acara kuliah umum Universitas Sebelas Maret. Aris sebagai panitia dan Anin sebagai peserta.</p><ganti></ganti>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+                    <div class="timeline-date">Februari 2020</div><ganti></ganti>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">ꦧꦺꦂꦠꦺꦩꦸꦤ꧀ꦪ ꦕꦶꦤ꧀ꦠ</h3>
+                        <p class="timeline-text">Mulai menjalin hubungan setelah sering bertemu di komunitas pencinta budaya Jawa.</p><ganti></ganti>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
+                    <div class="timeline-date">Agustus 2025</div><ganti></ganti>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">ꦕꦶꦤ꧀ꦠ ꦢꦶꦩꦸꦭꦻ</h3>
+                        <p class="timeline-text">Aris melamar Anin di rumah orang tua Anin dengan adat Jawa lengkap.</p><ganti></ganti>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="500">
+                    <div class="timeline-date">Februari 2026</div><ganti></ganti>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">ꦕꦶꦤ꧀ꦠ ꦲꦧꦢꦶ</h3>
+                        <p class="timeline-text">Hari yang dinantikan, di mana kami akan menyatukan dua hati dalam ikatan pernikahan.</p><ganti></ganti>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Location Section -->
+    <!-- Location Section -->
+<section id="location" class="section location-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h3 class="section-title">ꦭꦺꦴꦏꦱꦶꦁꦏꦩꦶꦭꦤ꧀ꦠꦸꦏꦂ</h3>
+            <h2 class="section-subtitle">Lokasi Acara</h2>
+            <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fas fa-heart"></i></div>
+                <div class="divider-line"></div>
+            </div>
+        </div>
+        
+        <div class="location-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="location-info">
+                <h3 class="location-title">Universitas Kusuma Husada Surakarta</h3>
+                <p class="location-address">
+                    <i class="fas fa-map-marker-alt"></i> Jl. Jaya Wijaya No..11, Kadipiro, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57136
+                </p>
+                <p class="location-description">
+                    Gedung yang sarat dengan nuansa Jawa klasik, cocok untuk pernikahan adat Jawa dengan fasilitas lengkap dan parkir luas.
+                </p>
+                
+                <div class="location-features">
+                    <div class="feature">
+                        <i class="fas fa-car"></i>
+                        <span>Parkir Luas</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-wifi"></i>
+                        <span>WiFi Gratis</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-utensils"></i>
+                        <span>Catering</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-music"></i>
+                        <span>Live Musik</span>
+                    </div>
+                </div>
+                
+                <a href="https://maps.app.goo.gl/BhBiF8NAdnnjEwNa7" target="_blank" class="direction-btn"><ganti></ganti>
+                    <i class="fas fa-directions"></i> Petunjuk Arah
+                </a>
+            </div>
+            
+            <div class="location-map">
+                <!-- Google Maps Embed --><ganti></ganti>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7566.596553398348!2d110.82911966723093!3d-7.535110986750759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17e9c901ddc3%3A0x319085f622fdf7e3!2sUniversitas%20Kusuma%20Husada%20Surakarta!5e0!3m2!1sid!2sid!4v1768397724842!5m2!1sid!2sid"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Lokasi Acara Pernikahan">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h3 class="section-title">ꦒꦭꦺꦫꦶ ꦥ꦳ꦺꦴꦠꦺꦴ</h3>
+                <h2 class="section-subtitle">Galeri Foto</h2>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-heart"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+    <!-- Foto 1 -->
+    <div class="gallery-item" onclick="openLightbox('foto1')">
+        <div class="gallery-img" style="background-image: url('1.jpeg')"><ganti></ganti>
+            <div class="img-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Foto 2 -->
+    <div class="gallery-item" onclick="openLightbox('foto2')">
+        <div class="gallery-img" style="background-image: url('2.jpg')"><ganti></ganti>
+            <div class="img-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Foto 3 -->
+    <div class="gallery-item" onclick="openLightbox('foto3')">
+        <div class="gallery-img" style="background-image: url('3.jpg')"><ganti></ganti>
+            <div class="img-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Foto 4 -->
+    <div class="gallery-item" onclick="openLightbox('foto4')">
+        <div class="gallery-img" style="background-image: url('4.jpg')"><ganti></ganti>
+            <div class="img-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Foto 5 -->
+    <div class="gallery-item" onclick="openLightbox('foto5')">
+        <div class="gallery-img" style="background-image: url('5.jpg')"><ganti></ganti>
+            <div class="img-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Foto 6 -->
+    <div class="gallery-item" onclick="openLightbox('foto6')">
+        <div class="gallery-img" style="background-image: url('7.jpg')">
+            <div class="img-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-content">
+                <div class="lightbox-img" id="lightbox-img"></div>
+                <div class="lightbox-caption" id="lightbox-caption"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- RSVP & Ucapan Section -->
+    <section id="rsvp" class="section rsvp-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h3 class="section-title">ꦏꦺꦴꦤ꧀ꦥ꦳ꦶꦂꦩꦱꦶ ꦏꦺꦲꦢꦶꦫꦤ꧀</h3>
+                <h2 class="section-subtitle">Konfirmasi Kehadiran & Ucapan</h2>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-heart"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+                <p class="section-desc">Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
+            </div>
+            
+            <div class="rsvp-container">
+                <div class="rsvp-form-container" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="form-title">Konfirmasi Kehadiran</h3>
+                    <form id="rsvpForm">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap *</label>
+                            <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="jumlahTamu">Jumlah Tamu</label>
+                            <select id="jumlahTamu" name="jumlahTamu">
+                                <option value="1">1 Orang</option>
+                                <option value="2" selected>2 Orang</option>
+                                <option value="3">3 Orang</option>
+                                <option value="4">4 Orang</option>
+                                <option value="5">5 Orang atau lebih</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Konfirmasi Kehadiran *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="hadir" name="kehadiran" value="Hadir" required checked>
+                                    <label for="hadir">
+                                        <i class="fas fa-check-circle"></i> Hadir
+                                    </label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="tidak" name="kehadiran" value="Tidak Hadir">
+                                    <label for="tidak">
+                                        <i class="fas fa-times-circle"></i> Tidak Hadir
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pesan">Pesan / Ucapan</label>
+                            <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan atau doa untuk mempelai"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Kirim Konfirmasi
+                        </button>
+                        
+                        <div class="form-note">
+                            * Data yang Anda kirim akan tersimpan secara otomatis
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="wishes-container" data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="wishes-title">Ucapan Terbaru</h3>
+                    <div class="wishes-list" id="wishesList">
+                        <!-- Dummy wishes will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Digital Envelope -->
+            <div class="digital-envelope" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="envelope-title">ꦲꦩ꧀ꦥ꧀ꦭꦺꦴꦥ꧀ ꦢꦶꦒꦶꦠꦭ꧀</h3>
+                <p class="envelope-subtitle">Amplop Digital</p>
+                
+                <div class="envelope-content">
+                    <div class="bank-info">
+                        <div class="bank-card">
+                            <h4><i class="fas fa-university"></i> Bank Central Asia (BCA)</h4><ganti></ganti>
+                            <p class="account-number">123-456-7890</p><ganti></ganti>
+                            <p>a.n. Arjuna Wicaksono</p><ganti></ganti>
+                            <button class="copy-btn" onclick="copyToClipboard('123-456-7890')"><ganti></ganti>
+                                <i class="fas fa-copy"></i> Salin No. Rekening
+                            </button>
+                        </div>
+                        
+                        <div class="bank-card">
+                            <h4><i class="fas fa-university"></i> Bank Mandiri</h4><ganti></ganti>
+                            <p class="account-number">987-654-3210</p><ganti></ganti>
+                            <p>a.n. Sinta Kirana</p><ganti></ganti>
+                            <button class="copy-btn" onclick="copyToClipboard('987-654-3210')"><ganti></ganti>
+                                <i class="fas fa-copy"></i> Salin No. Rekening
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="qris-container">
+                        <div class="qris-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                            <p>QRIS Code</p>
+                            <p class="qris-note">(Tampilkan kode QRIS di sini)</p>
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard('QRIS_Code_Here')">
+                            <i class="fas fa-copy"></i> Salin Kode QRIS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <h3 class="footer-title">ꦠꦺꦫꦶꦩ ꦏꦱꦶꦃ ꦠꦺꦭꦃ ꦩꦺꦭꦸꦮꦤ꧀ꦒ꧀ꦏꦤ꧀ ꦮꦏ꧀ꦠꦸ ꦲꦸꦤ꧀ꦠꦸꦏ꧀ ꦲꦢꦶꦂ ꦢꦭꦩ꧀ ꦥꦺꦂꦗꦭꦤꦤ꧀ ꦏꦩꦶ</h3>
+                    <p class="footer-translation">"Terima kasih telah meluangkan waktu untuk hadir dalam perjalanan kami. Doa dan restu dari Bapak/Ibu/Saudara/i sekalian merupakan karunia yang tak ternilai bagi kami."</p>
+                </div>
+                
+                <div class="footer-ornament">
+                    <div class="footer-ornament-line"></div>
+                    <div class="footer-ornament-circle"></div>
+                    <div class="footer-ornament-line"></div>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>© 2024 - Undangan Pernikahan Arjuna & Sinta</p>
+                    <p class="footer-quote">ꦱꦸꦒꦺꦤ꧀ꦒ꧀ ꦫꦲꦪꦸ ꦏꦤ꧀ꦒ꧀ꦒꦺ ꦩꦶꦠ꧀ꦫ ꦱꦸꦭꦶꦃ ꦲꦶꦤ꧀ꦒ꧀ ꦧꦺꦤꦤ꧀ꦒꦺꦠ꧀</p>
+                    <p class="footer-quote-translation">"Sugeng rahayu kanggé mitra sulih ing benangét"</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

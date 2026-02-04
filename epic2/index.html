@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pernikahan Fulan & Fulanah</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="welcome-screen">
+        <div class="welcome-content" data-aos="zoom-in">
+    <p>Undangan Pernikahan</p>
+    <h1>Fulan & Fulanah</h1>
+    
+    <div class="guest-info">
+        <p>Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+        <h2 id="guest-name-display">Tamu Undangan</h2>
+    </div>
+
+    <button id="btn-open">Buka Undangan</button>
+</div>
+    </div>
+
+    <div class="music-control">
+        <button id="music-btn"><i class="fa-solid fa-compact-disc fa-spin"></i></button>
+        <audio id="bg-music" loop>
+            <source src="1.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <nav class="glass-nav">
+        <a href="#home" class="active"><i class="fa-solid fa-house"></i></a>
+        <a href="#mempelai"><i class="fa-solid fa-user-group"></i></a>
+        <a href="#acara"><i class="fa-solid fa-calendar-check"></i></a>
+        <a href="#gallery"><i class="fa-solid fa-camera-retro"></i></a>
+        <a href="#rsvp"><i class="fa-solid fa-envelope-open-text"></i></a>
+        <a href="#gift"><i class="fa-solid fa-gift"></i></a>
+    </nav>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+
+
+    <section id="home" class="hero-parallax">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <p class="animate-text">Kami Akan Mengadakan Pernikahan</p>
+            <h1 class="title-font">Fulan & Fulanah</h1>
+            <div class="divider-line"></div>
+            <p class="date-hero">08 . 12 . 2031</p>
+            <div id="countdown" class="countdown-box">
+                <div><span id="days">00</span> Hari</div>
+                <div><span id="hours">00</span> Jam</div>
+                <div><span id="minutes">00</span> Menit</div>
+                <div><span id="seconds">00</span> Detik</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow"><span></span><span></span><span></span></div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container" data-aos="fade-up">
+            <i class="fa-solid fa-quote-left"></i>
+            <p>"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya."</p>
+            <span class="surah">(Ar-Rum: 21)</span>
+        </div>
+    </section>
+
+    <section id="mempelai" class="mempelai-section">
+        <div class="bg-ornament"></div>
+        <h2 class="section-title" data-aos="fade-up">Biodata Pasangan</h2>
+        <div class="couple-container">
+            <div class="couple-card groom" data-aos="fade-right">
+                <div class="img-frame">
+                    <img src="pengantinpria.jpg" alt="Fulan">
+                </div>
+                <div class="couple-info">
+                    <h3>Fulan</h3>
+                    <p class="son-of">Putra Pertama Bpk. Fulan & Ibu Fulanah</p>
+                    <div class="socials">
+                        <a href="https://www.instagram.com/ashimatu.elqudsy?igsh=YWJybzMxdDRrc214" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/6285161808524" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <br><br><i>klik ikon media sosial untuk tahu akunnya</i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center-connector" data-aos="zoom-in">
+                <span class="and-symbol">&</span>
+            </div>
+
+            <div class="couple-card bride" data-aos="fade-left">
+                <div class="couple-info">
+                    <h3>Fulanah</h3>
+                    <p class="son-of">Putri Kedua Bpk. Fulan & Ibu Fulanah</p>
+                    <div class="socials">
+                        <a href="https://www.instagram.com/ashimatu.elqudsy?igsh=YWJybzMxdDRrc214" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/6285161808524" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <br><br><i>klik ikon media sosial untuk tahu akunnya</i>
+                    </div>
+                </div>
+                <div class="img-frame">
+                    <img src="mempelaiwanita.jpg" alt="Fulanah">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="acara" class="event-section">
+        <h2 class="section-title" data-aos="fade-up">Simpan Tanggal dan Lokasinya</h2>
+        <div class="timeline">
+            <div class="timeline-item left" data-aos="fade-up">
+                <div class="content glass-card">
+                    <div class="icon-box"><i class="fa-solid fa-handshake-simple"></i></div>
+                    <h3>Akad Nikah</h3>
+                    <p class="date-event">Minggu, 08 Desember 2026</p>
+                    <p class="time-event"><i class="fa-regular fa-clock"></i> 08:00 - 10:00 WIB</p>
+                    <p class="loc-event">Masjid Agung Al-Ittihad, Jakarta Selatan</p>
+                    <a href="https://maps.app.goo.gl/6xT1Ze4Yc5dsaFsN6?g_st=aw" target="_blank" class="btn-map">Lihat Lokasi</a>
+                </div>
+            </div>
+            <div class="timeline-item right" data-aos="fade-up">
+                <div class="content glass-card">
+                    <div class="icon-box"><i class="fa-solid fa-champagne-glasses"></i></div>
+                    <h3>Resepsi Pernikahan</h3>
+                    <p class="date-event">Minggu, 08 Desember 2026</p>
+                    <p class="time-event"><i class="fa-regular fa-clock"></i> 11:00 - 14:00 WIB</p>
+                    <p class="loc-event">Grand Ballroom Luxury Ritz, Jakarta Pusat</p>
+                    <a href="https://maps.app.goo.gl/PKonUGDYJZX383qG8" target="_blank" class="btn-map">Lihat Lokasi</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <h2 class="section-title" data-aos="fade-up">Momen Yang Ditangkap</h2>
+        <div class="masonry-grid">
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="100"><img src="1.jpeg" alt="Moment 1"></div>
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="200"><img src="2.jpg" alt="Moment 2"></div>
+            <div class="grid-item tall" data-aos="fade-up" data-aos-delay="300"><img src="3.jpg" alt="Moment 3"></div>
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="400"><img src="4.jpg" alt="Moment 4"></div>
+            <div class="grid-item tall" data-aos="fade-up" data-aos-delay="500"><img src="5.jpg" alt="Moment 5"></div>
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="600"><img src="6.jpg" alt="Moment 6"></div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="rsvp-section">
+        <div class="rsvp-glass-container" data-aos="zoom-in-up">
+            <div class="rsvp-header">
+                <h2>RSVP</h2>
+                <p>Konfirmasi kehadiran Anda untuk membantu kami mempersiapkan acara sebaik mungkin.</p>
+            </div>
+            <form id="rsvpForm">
+                <div class="input-group">
+                    <input type="text" name="Nama" required>
+                    <label>Nama Lengkap</label>
+                </div>
+                <div class="input-group">
+                    <select name="Kehadiran" required>
+                        <option value="" disabled selected>Konfirmasi Kehadiran</option>
+                        <option value="Hadir">Hadir</option>
+                        <option value="Tidak Hadir">Tidak Hadir</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <textarea name="Pesan" required></textarea>
+                    <label>Pesan & Doa</label>
+                </div>
+                <button type="submit" id="submitBtn" class="btn-submit">
+                    <span>Kirim Konfirmasi</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section id="gift" class="gift-section">
+        <h2 class="section-title" data-aos="fade-up">Hadiah Untuk Pengantin</h2>
+        <p class="gift-desc" data-aos="fade-up">Doa restu Anda adalah hadiah terbaik bagi kami. Namun jika Anda ingin memberikan tanda kasih, dapat melalui:</p>
+        
+        <div class="cards-container">
+            <div class="bank-card" data-aos="flip-left">
+                <div class="card-chip"></div>
+                <div class="bank-logo"><img src="BSI.jpg" alt="BSI"></div>
+                <div class="card-number">1234 5678 9012</div>
+                <div class="card-holder">
+                    <span>MEMBER SINCE 2020</span>
+                    <h3>Fulan</h3>
+                </div>
+                <button onclick="copyText('123456789012')" class="btn-copy-card"><i class="fa-regular fa-copy"></i> Salin</button>
+            </div>
+            
+            <div class="bank-card" data-aos="flip-right" data-aos-delay="200">
+                <div class="card-chip"></div>
+                <div class="bank-logo"><img src="mandiri.jpg" alt="Mandiri"></div>
+                <div class="card-number">1234 5678 9012</div>
+                <div class="card-holder">
+                    <span>MEMBER SINCE 2021</span>
+                    <h3>Fulanah</h3>
+                </div>
+                <button onclick="copyText('123456789012')" class="btn-copy-card"><i class="fa-regular fa-copy"></i> Salin</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Fulan & Fulanah</h3>
+            <p>Terima kasih atas doa dan restu Anda.</p>
+            <div class="copyright">
+                © 2026 Wedding Invitation. Created with <i class="fa-solid fa-heart"></i>
+            </div>
+        </div>
+    </footer>
+
+    <div id="ios-notif" class="ios-notif-container" style="display: none;">
+        <div class="ios-notif-content">
+            <div class="ios-notif-icon">
+                <i class="fa-solid fa-volume-high"></i>
+            </div>
+            <div class="ios-notif-text">
+                <p>Klik tombol ini untuk mematikan suara jika tidak nyaman.</p>
+            </div>
+            <div class="ios-notif-arrow"></div>
+        </div>
+    </div>
+
+    
+
+
+<script>
+    // 1. Ambil data dari URL (query string)
+    const urlParams = new URLSearchParams(window.location.search);
+    const nama = urlParams.get('to'); // Mengambil isi dari variabel 'to'
+
+    // 2. Cek apakah ada nama di URL
+    if (nama) {
+        // Ganti teks "Nama Tamu" dengan nama dari URL
+        document.getElementById("nama-tamu").innerText = nama;
+    } else {
+        // Jika tidak ada nama di URL (link biasa), tampilkan teks default
+        document.getElementById("nama-tamu").innerText = "Tamu Undangan";
+    }
+</script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Undangan Pernikahan Islami | Ahmad & Fatimah</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Lateef:wght@300;400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+    
+    <!-- Islamic Pattern Background -->
+    <style>
+        .islamic-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0C50 0 50 20 50 20C50 20 70 20 70 20C70 20 70 40 70 40C70 40 50 40 50 40C50 40 50 60 50 60C50 60 30 60 30 60C30 60 30 40 30 40C30 40 10 40 10 40C10 40 10 20 10 20C10 20 30 20 30 20C30 20 30 0 30 0C30 0 50 0 50 0Z' fill='%232e7d32' fill-opacity='0.08'/%3E%3Cpath d='M90 20C90 20 90 40 90 40C90 40 70 40 70 40C70 40 70 60 70 60C70 60 50 60 50 60C50 60 50 80 50 80C50 80 70 80 70 80C70 80 70 100 70 100C70 100 90 100 90 100C90 100 90 80 90 80C90 80 110 80 110 80C110 80 110 60 110 60C110 60 90 60 90 60C90 60 90 40 90 40C90 40 110 40 110 40C110 40 110 20 110 20C110 20 90 20 90 20Z' fill='%232e7d32' fill-opacity='0.08'/%3E%3Cpath d='M10 80C10 80 10 100 10 100C10 100 30 100 30 100C30 100 30 80 30 80C30 80 50 80 50 80C50 80 50 60 50 60C50 60 30 60 30 60C30 60 30 40 30 40C30 40 10 40 10 40C10 40 10 60 10 60C10 60 -10 60 -10 60C-10 60 -10 80 -10 80C-10 80 10 80 10 80Z' fill='%232e7d32' fill-opacity='0.08'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+        
+        .shadow-green {
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.3);
+        }
+        
+        .text-shadow-green {
+            text-shadow: 0 2px 4px rgba(46, 125, 50, 0.5);
+        }
+        
+        .border-green {
+            border-color: #2e7d32;
+        }
+        
+        .bg-green-gradient {
+            background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+        }
+        
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: white;
+            transition: opacity 1s ease;
+        }
+        
+        .loading-content {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .guest-name {
+            font-family: 'Lateef', serif;
+            font-size: 2.5rem;
+            color: #ffeb3b;
+            margin: 20px 0;
+            padding: 10px 30px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .loading-text {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        
+        .arabic-text {
+            font-family: 'Scheherazade New', serif;
+            font-size: 2rem;
+            color: #c8e6c9;
+            margin: 20px 0;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #ffeb3b;
+            animation: spin 1s linear infinite;
+            margin: 30px auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="islamic-bg">
+    <!-- Loading Screen -->
+<div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+        <div class="arabic-text">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+        <h2 class="loading-text">Undangan Pernikahan Islami</h2>
+        <div class="guest-name" id="guestName">Kepada Yth. Bapak/Ibu/Saudara/i</div>
+        <p class="loading-text">Sedang memuat kebahagiaan...</p>
+        <div class="loading-spinner"></div>
+        <p class="loading-tip">Undangan akan dimuat otomatis</p>
+    </div>
+</div>
+    
+    <!-- Music Control -->
+    <div class="music-control" id="musicControl">
+        <i class="fas fa-play" id="musicIcon"></i>
+        <audio id="backgroundMusic" loop>
+            <source src="nasyid.mp3" type="audio/mpeg">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+    </div>
+    
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <a href="#cover" class="nav-dot active" data-section="cover"></a>
+        <a href="#couple" class="nav-dot" data-section="couple"></a>
+        <a href="#verse" class="nav-dot" data-section="verse"></a>
+        <a href="#events" class="nav-dot" data-section="events"></a>
+        <a href="#location" class="nav-dot" data-section="location"></a>
+        <a href="#gallery" class="nav-dot" data-section="gallery"></a>
+        <a href="#rsvp" class="nav-dot" data-section="rsvp"></a>
+    </div>
+    
+    <!-- Cover Section -->
+    <section id="cover" class="cover-section">
+        <div class="cover-content">
+            <div class="cover-ornament top-left">
+                <div class="ornament-line"></div>
+                <div class="ornament-circle"></div>
+            </div>
+            <div class="cover-ornament top-right">
+                <div class="ornament-line"></div>
+                <div class="ornament-circle"></div>
+            </div>
+            
+            <div class="cover-text">
+                <div class="arabic-title" data-aos="fade-up" data-aos-delay="100">دَعْوَةٌ لِلزِّفَافِ</div>
+                <h4 class="subtitle" data-aos="fade-up" data-aos-delay="150">UNDANGAN PERNIKAHAN</h4>
+                <div class="couple-names" data-aos="fade-up" data-aos-delay="250">
+                    <h2 class="groom">Ahmad  <span class="amp">&</span></h2>
+                    <h2 class="bride">Fatimah</h2>
+                </div>
+                <p class="date" data-aos="fade-up" data-aos-delay="350">Sabtu, 10 Ramadhan 1447 H<br>Sabtu, 4 April 2026 M</p>
+                <p class="invited-to" data-aos="fade-up" data-aos-delay="400">Kepada Yth: <span id="displayGuestName">Bapak/Ibu/Saudara/i</span></p>
+                
+                <div class="open-invitation" data-aos="fade-up" data-aos-delay="500">
+                    <button id="openBtn" class="open-btn">
+                        <i class="fas fa-envelope-open-text"></i> Buka Undangan
+                    </button>
+                    <p class="instruction">Klik untuk membuka undangan</p>
+                    <div class="scroll-indicator">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cover-ornament bottom-left">
+                <div class="ornament-circle"></div>
+                <div class="ornament-line"></div>
+            </div>
+            <div class="cover-ornament bottom-right">
+                <div class="ornament-circle"></div>
+                <div class="ornament-line"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Couple Section -->
+    <section id="couple" class="section couple-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h3 class="section-title">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا</h3>
+                <h2 class="section-subtitle">Mempelai</h2>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-mosque"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+                <p class="section-desc">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir." (QS. Ar-Rum: 21)</p>
+            </div>
+            
+            <div class="couple-container">
+                <div class="couple-card groom-card" data-aos="fade-right">
+                    <div class="couple-image">
+                        <div class="image-frame">
+                            <div class="image-placeholder groom-img">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="couple-info">
+                        <h3 class="couple-name">Ahmad Al-Farouq</h3>
+                        <p class="couple-nickname">Putra dari</p>
+                        <p class="couple-parents">Bapak Dr. Muhammad Hasyim<br>& Ibu Aisyah Rahma</p>
+                        <div class="couple-ornament">
+                            <div class="small-ornament"></div>
+                            <div class="small-ornament"></div>
+                            <div class="small-ornament"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="couple-center" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="center-ornament">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <p class="center-text">بِسْمِ اللهِ</p>
+                    <p class="center-text">Dengan Menyebut Nama Allah</p>
+                </div>
+                
+                <div class="couple-card bride-card" data-aos="fade-left">
+                    <div class="couple-image">
+                        <div class="image-frame">
+                            <div class="image-placeholder bride-img">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="couple-info">
+                        <h3 class="couple-name">Fatimah Az-Zahra</h3>
+                        <p class="couple-nickname">Putri dari</p>
+                        <p class="couple-parents">Bapak Abdullah Qureshi<br>& Ibu Sarah Amira</p>
+                        <div class="couple-ornament">
+                            <div class="small-ornament"></div>
+                            <div class="small-ornament"></div>
+                            <div class="small-ornament"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ayat Section -->
+    <section id="verse" class="section verse-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h3 class="section-title">آيَاتٌ مِنَ الْقُرْآنِ الْكَرِيمِ</h3>
+                <h2 class="section-subtitle">Ayat-Ayat Pernikahan</h2>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-book-quran"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="verses-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="verse-card" data-aos="fade-right" data-aos-delay="200">
+                    <div class="verse-arabic">
+                        وَأَنكِحُوا الْأَيَامَىٰ مِنكُمْ وَالصَّالِحِينَ مِنْ عِبَادِكُمْ وَإِمَائِكُمْ
+                    </div>
+                    <div class="verse-translation">
+                        "Dan nikahkanlah orang-orang yang sendirian diantara kamu, dan orang-orang yang layak (menikah) dari hamba-hamba sahayamu yang lelaki dan hamba-hamba sahayamu yang perempuan." (QS. An-Nur: 32)
+                    </div>
+                </div>
+                
+                <div class="verse-card" data-aos="fade-left" data-aos-delay="300">
+                    <div class="verse-arabic">
+                        فَإِنْ أَرْضَعْنَ لَكُمْ فَآتُوهُنَّ أُجُورَهُنَّ
+                    </div>
+                    <div class="verse-translation">
+                        "Maka berikanlah maskawin (mahar) kepada mereka sebagai suatu kewajiban." (QS. An-Nisa: 24)
+                    </div>
+                </div>
+                
+                <div class="verse-card" data-aos="fade-right" data-aos-delay="400">
+                    <div class="verse-arabic">
+                        وَلَا تَنكِحُوا الْمُشْرِكَاتِ حَتَّىٰ يُؤْمِنَّ
+                    </div>
+                    <div class="verse-translation">
+                        "Dan janganlah kamu menikahi wanita-wanita musyrik, sebelum mereka beriman." (QS. Al-Baqarah: 221)
+                    </div>
+                </div>
+                
+                <div class="verse-card" data-aos="fade-left" data-aos-delay="500">
+                    <div class="verse-arabic">
+                        فَانكِحُوا مَا طَابَ لَكُم مِّنَ النِّسَاءِ مَثْنَىٰ وَثُلَاثَ وَرُبَاعَ
+                    </div>
+                    <div class="verse-translation">
+                        "Maka nikahilah wanita-wanita (lain) yang kamu senangi: dua, tiga, atau empat." (QS. An-Nisa: 3)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Events Section -->
+    <section id="events" class="section events-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h3 class="section-title">بَرْنَامَجُ الْحَفْلَةِ</h3>
+                <h2 class="section-subtitle">Jadwal Acara</h2>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="countdown-container" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="countdown-title">Menuju Hari Bahagia</h3>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Hari</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Jam</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Detik</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="events-timeline">
+                <div class="event-card" data-aos="fade-right" data-aos-delay="200">
+                    <div class="event-icon">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <div class="event-details">
+                        <h3 class="event-title">Akad Nikah</h3>
+                        <p class="event-date"><i class="far fa-calendar"></i> Sabtu, 4 April 2026</p>
+                        <p class="event-time"><i class="far fa-clock"></i> Pukul 08:00 - 10:00 WIB</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Masjid Al-Ikhlas<br>Jl. Kebajikan No. 123, Jakarta Pusat</p>
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Ahmad+%26+Fatimah+-+Akad+Nikah&dates=20260404T010000Z/20260404T030000Z&details=Akad+Nikah+Ahmad+dan+Fatimah&location=Masjid+Al-Ikhlas,+Jl.+Kebajikan+No.+123,+Jakarta+Pusat" target="_blank" class="calendar-btn">
+                            <i class="far fa-calendar-plus"></i> Tambahkan ke Kalender
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-aos="fade-left" data-aos-delay="300">
+                    <div class="event-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <div class="event-details">
+                        <h3 class="event-title">Walimah / Resepsi</h3>
+                        <p class="event-date"><i class="far fa-calendar"></i> Sabtu, 4 April 2026</p>
+                        <p class="event-time"><i class="far fa-clock"></i> Pukul 11:00 - 14:00 WIB</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Ballroom Hotel Syariah<br>Jl. Kemuliaan No. 456, Jakarta Selatan</p>
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Ahmad+%26+Fatimah+-+Walimah&dates=20260404T040000Z/20260404T070000Z&details=Walimah+Pernikahan+Ahmad+dan+Fatimah&location=Ballroom+Hotel+Syariah,+Jl.+Kemuliaan+No.+456,+Jakarta+Selatan" target="_blank" class="calendar-btn">
+                            <i class="far fa-calendar-plus"></i> Tambahkan ke Kalender
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dress-code" data-aos="fade-up" data-aos-delay="400">
+                <h3 class="dress-code-title">Kode Busana Islami</h3>
+                <div class="dress-code-items">
+                    <div class="dress-code-item">
+                        <div class="dress-icon groom-color">
+                            <i class="fas fa-male"></i>
+                        </div>
+                        <p>Baju Koko / Jas<br>(Warna Gelap)</p>
+                    </div>
+                    <div class="dress-code-item">
+                        <div class="dress-icon bride-color">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <p>Mukena / Busana Muslimah<br>(Warna Muted)</p>
+                    </div>
+                </div>
+                <p class="dress-code-note">*Diharapkan menutup aurat sesuai syariat Islam</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Location Section -->
+    <section id="location" class="section location-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h3 class="section-title">مَكَانُ الْحَفْلَةِ</h3>
+                <h2 class="section-subtitle">Lokasi Acara</h2>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="location-tabs" data-aos="fade-up" data-aos-delay="100">
+                <button class="tab-btn active" onclick="openTab('akad')">Akad Nikah</button>
+                <button class="tab-btn" onclick="openTab('walimah')">Walimah</button>
+            </div>
+            
+            <div class="tab-content">
+                <div id="akad" class="tab-pane active">
+                    <div class="location-container">
+                        <div class="location-info">
+                            <h3 class="location-title">Masjid Al-Ikhlas</h3>
+                            <p class="location-address">
+                                <i class="fas fa-map-marker-alt"></i> Jl. Kebajikan No. 123, Menteng, Jakarta Pusat 10310
+                            </p>
+                            <p class="location-description">
+                                Masjid yang nyaman dan representatif untuk acara akad nikah. Dilengkapi dengan fasilitas memadai untuk tamu undangan.
+                            </p>
+                            
+                            <div class="location-features">
+                                <div class="feature">
+                                    <i class="fas fa-pray"></i>
+                                    <span>Tempat Wudhu</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-users"></i>
+                                    <span>Kapasitas 500 Orang</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-parking"></i>
+                                    <span>Parkir Luas</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-fan"></i>
+                                    <span>AC</span>
+                                </div>
+                            </div>
+                            
+                            <a href="https://maps.google.com/?q=Masjid+Al-Ikhlas+Jakarta+Pusat" target="_blank" class="direction-btn">
+                                <i class="fas fa-directions"></i> Petunjuk Arah
+                            </a>
+                        </div>
+                        
+                        <div class="location-map">
+                            <div class="map-container">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.603920547931!2d106.82656231529422!3d-6.186686362314842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4258a1b1b9f%3A0x2a8a1b1b9f0b0b0b!2sMasjid%20Al-Ikhlas%20Jakarta!5e0!3m2!1sid!2sid!4v1640995200000!5m2!1sid!2sid"
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Lokasi Akad Nikah">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="walimah" class="tab-pane">
+                    <div class="location-container">
+                        <div class="location-info">
+                            <h3 class="location-title">Ballroom Hotel Syariah</h3>
+                            <p class="location-address">
+                                <i class="fas fa-map-marker-alt"></i> Jl. Kemuliaan No. 456, Kebayoran Baru, Jakarta Selatan 12120
+                            </p>
+                            <p class="location-description">
+                                Ballroom eksklusif dengan nuansa Islami, dilengkapi fasilitas modern dan penyedia makanan halal bersertifikat MUI.
+                            </p>
+                            
+                            <div class="location-features">
+                                <div class="feature">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Catering Halal</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-users"></i>
+                                    <span>Kapasitas 1000 Orang</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>WiFi Gratis</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-music"></i>
+                                    <span>Nasyid Live</span>
+                                </div>
+                            </div>
+                            
+                            <a href="https://maps.google.com/?q=Hotel+Syariah+Jakarta+Selatan" target="_blank" class="direction-btn">
+                                <i class="fas fa-directions"></i> Petunjuk Arah
+                            </a>
+                        </div>
+                        
+                        <div class="location-map">
+                            <div class="map-container">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.414267716596!2d106.79867341529442!3d-6.22676356231762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14b3b3b3b3b%3A0x2a8a1b1b9f0b0b0b!2sHotel%20Syariah%20Jakarta!5e0!3m2!1sid!2sid!4v1640995200000!5m2!1sid!2sid"
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Lokasi Walimah">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h3 class="section-title">الذِّكْرَىات</h3>
+                <h2 class="section-subtitle">Galeri Kenangan</h2>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-images"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+                <!-- Foto 1 -->
+                <div class="gallery-item" onclick="openLightbox('foto1')">
+                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+                        <div class="img-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Foto 2 -->
+                <div class="gallery-item" onclick="openLightbox('foto2')">
+                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+                        <div class="img-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Foto 3 -->
+                <div class="gallery-item" onclick="openLightbox('foto3')">
+                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+                        <div class="img-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Foto 4 -->
+                <div class="gallery-item" onclick="openLightbox('foto4')">
+                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+                        <div class="img-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Foto 5 -->
+                <div class="gallery-item" onclick="openLightbox('foto5')">
+                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+                        <div class="img-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Foto 6 -->
+                <div class="gallery-item" onclick="openLightbox('foto6')">
+                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+                        <div class="img-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lightbox Modal -->
+            <div id="lightbox" class="lightbox">
+                <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+                <div class="lightbox-content">
+                    <div class="lightbox-img" id="lightbox-img"></div>
+                    <div class="lightbox-caption" id="lightbox-caption"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- RSVP & Ucapan Section -->
+    <section id="rsvp" class="section rsvp-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h3 class="section-title">تَأْكِيدُ الْحُضُورِ</h3>
+                <h2 class="section-subtitle">Konfirmasi Kehadiran & Doa</h2>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-praying-hands"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+                <p class="section-desc">"Barangsiapa yang beriman kepada Allah dan hari akhir, maka hendaklah ia memuliakan tamunya." (HR. Bukhari-Muslim)<br>Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
+            </div>
+            
+            <div class="rsvp-container">
+                <div class="rsvp-form-container" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="form-title">Konfirmasi Kehadiran</h3>
+                    <form id="rsvpForm">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap *</label>
+                            <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="doa">Doa untuk Mempelai *</label>
+                            <textarea id="doa" name="doa" rows="4" required placeholder="Tuliskan doa terbaik Anda untuk mempelai..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="jumlahTamu">Jumlah Tamu</label>
+                            <select id="jumlahTamu" name="jumlahTamu">
+                                <option value="1">1 Orang</option>
+                                <option value="2" selected>2 Orang</option>
+                                <option value="3">3 Orang</option>
+                                <option value="4">4 Orang</option>
+                                <option value="5+">5 Orang atau lebih</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Konfirmasi Kehadiran *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="hadir" name="kehadiran" value="Hadir" required checked>
+                                    <label for="hadir">
+                                        <i class="fas fa-check-circle"></i> Insha Allah Hadir
+                                    </label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="tidak" name="kehadiran" value="Tidak Hadir">
+                                    <label for="tidak">
+                                        <i class="fas fa-times-circle"></i> Mohon Maaf Tidak Hadir
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Kirim Konfirmasi & Doa
+                        </button>
+                        
+                        <div class="form-note">
+                            * Doa dan konfirmasi Anda akan tersimpan dan dibacakan untuk mempelai
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="wishes-container" data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="wishes-title">Doa & Ucapan Terbaru</h3>
+                    <div class="wishes-list" id="wishesList">
+                        <!-- Dummy wishes will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Digital Envelope -->
+            <div class="digital-envelope" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="envelope-title">بَارَكَ اللهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا</h3>
+                <p class="envelope-subtitle">Amplop Digital</p>
+                <p class="envelope-desc">"Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah"<br>Berbagi kebahagiaan merupakan bagian dari syukur. Jika berkenan memberikan hadiah:</p>
+                
+                <div class="envelope-content">
+                    <div class="bank-info">
+                        <div class="bank-card">
+                            <h4><i class="fas fa-university"></i> Bank Syariah Indonesia (BSI)</h4>
+                            <p class="account-number">711 0000 1234</p>
+                            <p>a.n. Ahmad Al-Farouq</p>
+                            <button class="copy-btn" onclick="copyToClipboard('71100001234')">
+                                <i class="fas fa-copy"></i> Salin No. Rekening
+                            </button>
+                        </div>
+                        
+                        <div class="bank-card">
+                            <h4><i class="fas fa-university"></i> Bank Muamalat</h4>
+                            <p class="account-number">123 4567 8901</p>
+                            <p>a.n. Fatimah Az-Zahra</p>
+                            <button class="copy-btn" onclick="copyToClipboard('12345678901')">
+                                <i class="fas fa-copy"></i> Salin No. Rekening
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="qris-container">
+                        <div class="qris-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                            <p>QRIS</p>
+                            <p class="qris-note">Scan untuk transfer</p>
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard('QRIS_Undangan_Ahmad_Fatimah')">
+                            <i class="fas fa-copy"></i> Simpan QRIS
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="envelope-note">* Semua dana akan digunakan untuk membangun rumah tangga yang sakinah, mawaddah, wa rahmah</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <h3 class="footer-title">جَزَاكُمُ اللهُ خَيْرًا كَثِيْرًا</h3>
+                    <p class="footer-translation">"Terima kasih banyak atas doa, waktu, dan perhatian yang telah Bapak/Ibu/Saudara/i berikan. Doa dan restu dari Anda sekalian merupakan karunia yang tak ternilai bagi perjalanan rumah tangga kami."</p>
+                </div>
+                
+                <div class="footer-ornament">
+                    <div class="footer-ornament-line"></div>
+                    <div class="footer-ornament-circle"></div>
+                    <div class="footer-ornament-line"></div>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>© 1447 H / 2026 M - Undangan Pernikahan Islami Ahmad & Fatimah</p>
+                    <p class="footer-quote">بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+                    <p class="footer-quote-translation">"Semoga Allah memberkahimu dan mengumpulkan kalian berdua dalam kebaikan"</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
