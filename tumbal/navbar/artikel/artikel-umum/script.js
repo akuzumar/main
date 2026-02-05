@@ -873,7 +873,7 @@ async function loadNavbar() {
 
     try {
         // Gunakan path absolut '/' agar bisa diakses dari folder mana pun
-        const response = await fetch('/navbar/navbar.html'); 
+        const response = await fetch('main/maktabahrasyida/navbar/navbar.html'); 
         const data = await response.text();
         container.innerHTML = data;
 
