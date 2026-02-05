@@ -307,7 +307,7 @@ class HealthArticlesApp {
     // Fungsi untuk memuat navbar menggunakan fetch
     async loadNavbar() {
         try {
-            const response = await fetch('/navbar/navbar.html');
+            const response = await fetch('/maktabahrasyidah/navbar/navbar.html');
             if (!response.ok) {
                 throw new Error('Navbar tidak ditemukan');
             }
@@ -873,7 +873,7 @@ async function loadNavbar() {
 
     try {
         // Gunakan path absolut '/' agar bisa diakses dari folder mana pun
-        const response = await fetch('main/maktabahrasyida/navbar/navbar.html'); 
+        const response = await fetch('/maktabahrasyidah/navbar/navbar.html'); 
         const data = await response.text();
         container.innerHTML = data;
 
