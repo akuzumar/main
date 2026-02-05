@@ -305,7 +305,7 @@ class HealthArticlesApp {
     // Fungsi untuk memuat navbar menggunakan fetch
     async loadNavbar() {
         try {
-            const response = await fetch('main/maktabahrasyida/navbar/navbar.html');
+            const response = await fetch('/maktabahrasyidah/navbar/navbar.html');
             if (!response.ok) {
                 throw new Error('Navbar tidak ditemukan');
             }
