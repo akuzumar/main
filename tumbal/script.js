@@ -62,7 +62,7 @@ class MaktabahApp {
     }
     
     loadNavbar() {
-        fetch('https://zumar.web.id/tumbal/navbar/navbar.html')
+        fetch('/tumbal/navbar/navbar.html')
             .then(response => response.text())
             .then(html => {
                 document.getElementById('navbar-container').innerHTML = html;
