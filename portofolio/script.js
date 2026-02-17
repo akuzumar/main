@@ -10,7 +10,9 @@ const MOBILE_MENU_BREAKPOINT = 900;
 const projectImageSources = {
   project1: "images/vanes.png",
   project2: "images/experience-proof-2.svg",
-  project3: "images/experience-proof-3.svg"
+  project3: "images/experience-proof-3.svg",
+  project4: "images/experience-proof-4.svg"
+  
 };
 
 // Ganti path file di object ini setelah upload gambar sertifikat.
@@ -37,7 +39,10 @@ let activeProjectKey = null;
 const projectDetailMap = {
   project1: { title: "project1Title", description: "project1Detail" },
   project2: { title: "project2Title", description: "project2Detail" },
-  project3: { title: "project3Title", description: "project3Detail" }
+  project3: { title: "project3Title", description: "project3Detail" },
+  project4: { title: "project4Title", description: "project4Detail" }
+  
+  
 };
 
 function getNavbarElements() {
