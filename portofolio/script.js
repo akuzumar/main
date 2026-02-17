@@ -31,7 +31,7 @@ let currentLanguage = "id";
 let typingTimeout;
 let typingIndex = 0;
 let isDeleting = false;
-let isDarkTheme = false;
+let isDarkTheme = true;
 let activeProjectKey = null;
 
 const projectDetailMap = {
@@ -190,9 +190,9 @@ function setTheme(nextThemeState) {
 function initThemeToggle() {
   try {
     const savedTheme = localStorage.getItem("zumar-theme");
-    isDarkTheme = savedTheme === "dark";
+    isDarkTheme = savedTheme !== "light";
   } catch {
-    isDarkTheme = false;
+    isDarkTheme = true;
   }
 
   document.body.classList.toggle("theme-dark", isDarkTheme);
