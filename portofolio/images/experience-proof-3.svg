@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Experience proof 3 placeholder">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff2e7" />
+      <stop offset="1" stop-color="#ffe7d0" />
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#g3)" />
+  <rect x="80" y="80" width="1760" height="920" fill="none" stroke="#d0741f" stroke-width="8" stroke-dasharray="18 14" rx="26" />
+  <text x="960" y="500" text-anchor="middle" font-size="72" fill="#9c5110" font-family="Trebuchet MS, Arial, sans-serif">Bukti Pengalaman 3</text>
+  <text x="960" y="590" text-anchor="middle" font-size="44" fill="#be6a1a" font-family="Trebuchet MS, Arial, sans-serif">Ganti file ini dengan gambar 1920x1080 kamu</text>
+</svg>
