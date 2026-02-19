@@ -158,7 +158,7 @@ skillItems: [
     },
     {
       id: "kontribusi-5",
-      image: "images/orspek.JPG",
+      image: "images/orspek.png",
       alt: "Kontribusi ORSPEK dan PDD",
       title: "PDD ORSPEK & Branding Kegiatan",
       text: "Berperan dalam publikasi, dokumentasi, dan dekorasi pada ORSPEK (12-20 Juli 2025) untuk membangun identitas visual acara.",
