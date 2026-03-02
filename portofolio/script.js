@@ -2362,7 +2362,67 @@ function bootstrap() {
   initGalleryLightbox();
   initPageTransitionLinks();
   initContactForm();
+  initFloatingChat();
   applyLanguage(currentLanguage);
+}
+
+// ------------------------------
+// Floating Chat Bubbles
+// ------------------------------
+function initFloatingChat() {
+  const heroSection = document.querySelector('.hero');
+  if (!heroSection) return;
+  
+  // Cek apakah elemen sudah ada
+  if (document.querySelector('.floating-chat')) return;
+
+  // Ubah isi bubble kiri dan kanan di sini (independen).
+  const leftBubbleContent = {
+    sender: "Zumar",
+    message: "Orang bodoh sedang belajar"
+  };
+
+  const rightBubbleContent = {
+    sender: "Zumar",
+    message: "Hai semuaaaa❤️🫶🏻🫰🏻"
+  };
+
+  const escapeHtml = (text) =>
+    String(text)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+
+  const createBubbleMarkup = (content) => `
+    <div class="chat-bubble">
+      <strong class="chat-name">${escapeHtml(content.sender)}</strong>
+      <div class="chat-message">${escapeHtml(content.message)}</div>
+    </div>
+  `;
+  
+  // Buat container untuk floating chat
+  const chatLeft = document.createElement('div');
+  chatLeft.className = 'floating-chat floating-chat-left';
+  chatLeft.innerHTML = createBubbleMarkup(leftBubbleContent);
+  
+  const chatRight = document.createElement('div');
+  chatRight.className = 'floating-chat floating-chat-right';
+  chatRight.innerHTML = createBubbleMarkup(rightBubbleContent);
+  
+  // Cari hero-photo-wrapper untuk menempatkan elemen
+  const heroPhotoWrapper = heroSection.querySelector('.hero-photo-wrapper');
+  if (heroPhotoWrapper) {
+    // Pastikan parent memiliki position relative
+    if (window.getComputedStyle(heroPhotoWrapper).position === 'static') {
+      heroPhotoWrapper.style.position = 'relative';
+    }
+    
+    // Tambahkan ke DOM
+    heroPhotoWrapper.appendChild(chatLeft);
+    heroPhotoWrapper.appendChild(chatRight);
+  }
 }
 
 bootstrap();
