@@ -14,229 +14,185 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            overflow: hidden;
-            touch-action: none;
+            overflow-x: hidden;
+            padding: 20px 10px;
         }
 
-        .container {
-            text-align: center;
-            padding: 15px;
-            max-width: 500px;
+        .main-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
             width: 100%;
-        }
-
-        /* Header 404 */
-        .header {
-            margin-bottom: 15px;
-            color: white;
-            text-shadow: 2px 2px 0 #00000050;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
 
         .header h1 {
-            font-size: 4rem;
-            line-height: 1;
+            font-size: 3.5rem;
+            background: linear-gradient(to bottom, #fff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 5px;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
-            to { text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700; }
         }
 
         .header p {
-            font-size: 1rem;
-            opacity: 0.9;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
         }
 
-        /* Score Board */
         .score-panel {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.4);
             padding: 10px 20px;
-            border-radius: 30px;
+            border-radius: 15px;
             margin-bottom: 15px;
-            color: white;
-            font-weight: bold;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 215, 0, 0.3);
         }
 
         .score-box {
             background: #ffd700;
             color: #1e3c72;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-size: 1.5rem;
+            padding: 2px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
-        /* Game Canvas */
         .game-wrapper {
             position: relative;
             width: 100%;
             aspect-ratio: 1/1;
-            background: #0a1a2f;
-            border-radius: 20px;
-            padding: 10px;
-            box-shadow: 0 20px 30px rgba(0,0,0,0.5);
-            border: 3px solid #ffd700;
+            background: #050c16;
+            border-radius: 15px;
+            padding: 5px;
+            border: 2px solid #ffd700;
+            margin-bottom: 20px;
         }
 
         canvas {
             width: 100%;
             height: 100%;
             display: block;
-            border-radius: 15px;
-            background: #0f2744;
-            cursor: pointer;
+            border-radius: 10px;
         }
 
-        /* Control Buttons */
+        /* Controls */
         .controls {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: grid;
+            grid-template-areas: 
+                ". up ."
+                "left down right";
             gap: 10px;
-            margin-top: 20px;
-        }
-
-        .control-row {
-            display: flex;
-            gap: 15px;
             justify-content: center;
+            margin-bottom: 20px;
         }
 
         .ctrl-btn {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border: 2px solid #ffd700;
-            color: white;
-            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,215,0,0.5);
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.5rem;
+            color: white;
             cursor: pointer;
-            transition: all 0.1s;
-            box-shadow: 0 5px 0 #b8860b;
-            user-select: none;
-            touch-action: manipulation;
+            transition: 0.1s;
         }
 
         .ctrl-btn:active {
-            transform: translateY(5px);
-            box-shadow: none;
             background: #ffd700;
-            color: #1e3c72;
+            color: #111;
+            transform: scale(0.9);
         }
 
-        .restart-btn {
+        #btnUp { grid-area: up; }
+        #btnDown { grid-area: down; }
+        #btnLeft { grid-area: left; }
+        #btnRight { grid-area: right; }
+
+        .action-area {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .btn-main {
+            padding: 14px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-restart {
             background: #ff4757;
-            border-color: #ff6b81;
-            box-shadow: 0 5px 0 #c0392b;
-            width: 120px;
-            border-radius: 40px;
-            font-size: 1.2rem;
-            margin-top: 5px;
+            color: white;
         }
 
-        /* Game Over Modal */
+        .btn-main:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* Modal */
         .modal {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            inset: 0;
+            background: rgba(0,0,0,0.85);
             display: none;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
+            z-index: 100;
             backdrop-filter: blur(5px);
         }
 
         .modal-content {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            padding: 40px;
-            border-radius: 30px;
+            background: #1e3c72;
+            padding: 30px;
+            border-radius: 20px;
             text-align: center;
-            color: white;
-            border: 3px solid #ffd700;
-            animation: modalPop 0.3s ease-out;
+            border: 2px solid #ffd700;
+            width: 80%;
         }
 
-        @keyframes modalPop {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .modal h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #ffd700;
-        }
-
-        .modal p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-        }
-
-        .modal-btn {
-            padding: 15px 40px;
-            background: #ffd700;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #1e3c72;
-            cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 5px 0 #b8860b;
-        }
-
-        .modal-btn:active {
-            transform: translateY(5px);
-            box-shadow: none;
-        }
-
-        /* Food animation */
-        .food-glow {
-            animation: pulse 1s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0% { filter: drop-shadow(0 0 2px red); }
-            50% { filter: drop-shadow(0 0 10px red); }
-            100% { filter: drop-shadow(0 0 2px red); }
-        }
-
-        /* Hint */
-        .hint {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.8rem;
-            margin-top: 10px;
+        @media (max-width: 380px) {
+            .header h1 { font-size: 2.5rem; }
+            .ctrl-btn { width: 50px; height: 50px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+
+    <div class="main-card">
         <div class="header">
             <h1>404</h1>
-            <p>Ular nyasar di halaman yang hilang...</p>
+            <p>Waduh! Ular ini nyasar, halamannya gak ada.</p>
         </div>
 
         <div class="score-panel">
-            <span>🐍 Panjang Ular</span>
+            <span>🐍 Skor Kamu</span>
             <span class="score-box" id="score">3</span>
         </div>
 
@@ -245,453 +201,145 @@
         </div>
 
         <div class="controls">
-            <div class="control-row">
-                <div class="ctrl-btn" id="btnUp">⬆️</div>
-            </div>
-            <div class="control-row">
-                <div class="ctrl-btn" id="btnLeft">⬅️</div>
-                <div class="ctrl-btn" id="btnDown">⬇️</div>
-                <div class="ctrl-btn" id="btnRight">➡️</div>
-            </div>
-            <div class="ctrl-btn restart-btn" id="restartBtn">↻ Mulai</div>
+            <div class="ctrl-btn" id="btnUp">▲</div>
+            <div class="ctrl-btn" id="btnLeft">◀</div>
+            <div class="ctrl-btn" id="btnDown">▼</div>
+            <div class="ctrl-btn" id="btnRight">▶</div>
         </div>
-        <div class="hint">Geser / tap arrow untuk main. Makan apel merah!</div>
+
+        <div class="action-area">
+            <button class="btn-main btn-restart" id="restartBtn">↻ Ulang Main</button>
+            <a href="https://wa.me/6285161808524?text=Halo,%20saya%20menemukan%20halaman%20404%20di%20website%20Anda." 
+               class="btn-main btn-whatsapp" target="_blank">
+               Hubungi Mas Zumar
+            </a>
+        </div>
     </div>
 
-    <!-- Game Over Modal -->
     <div class="modal" id="gameOverModal">
         <div class="modal-content">
-            <h2>GAME OVER</h2>
-            <p>Skor Akhir: <span id="finalScore">0</span></p>
-            <button class="modal-btn" id="restartModalBtn">Main Lagi</button>
+            <h2 style="color: #ffd700; margin-bottom: 10px;">GAME OVER</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Skor: <span id="finalScore">0</span></p>
+            <button class="btn-main btn-restart" id="restartModalBtn" style="width: 100%;">Main Lagi</button>
         </div>
     </div>
 
     <script>
-        // Konfigurasi Game
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         const scoreElement = document.getElementById('score');
         const finalScoreElement = document.getElementById('finalScore');
         const gameOverModal = document.getElementById('gameOverModal');
         
-        // Ukuran grid
-        const GRID_SIZE = 15; // 15x15 grid
-        let cellSize = 0;
-        
-        // Game state
-        let snake = [];
-        let food = { x: 5, y: 5 };
-        let direction = 'RIGHT';
-        let nextDirection = 'RIGHT';
-        let score = 3;
-        let gameRunning = false;
-        let gameSpeed = 150; // milliseconds
-        let gameInterval;
-        
-        // Inisialisasi canvas dan game
+        const GRID_SIZE = 15;
+        let cellSize, snake, food, direction, nextDirection, score, gameRunning, gameInterval;
+        const gameSpeed = 160;
+
         function initGame() {
-            // Set ukuran cell berdasarkan canvas
             resizeCanvas();
-            
-            // Reset snake
-            snake = [
-                { x: 7, y: 7 },
-                { x: 6, y: 7 },
-                { x: 5, y: 7 }
-            ];
-            
-            direction = 'RIGHT';
-            nextDirection = 'RIGHT';
+            snake = [{x: 7, y: 7}, {x: 6, y: 7}, {x: 5, y: 7}];
+            direction = nextDirection = 'RIGHT';
             score = 3;
             updateScore();
-            
-            // Generate food pertama
             generateFood();
-            
             gameRunning = true;
-            
-            // Clear interval yang ada
             if (gameInterval) clearInterval(gameInterval);
             gameInterval = setInterval(gameLoop, gameSpeed);
-            
             draw();
         }
-        
-        // Resize canvas handler
+
         function resizeCanvas() {
-            const container = canvas.parentElement;
-            const containerWidth = container.clientWidth;
-            canvas.width = containerWidth;
-            canvas.height = containerWidth;
-            cellSize = canvas.width / GRID_SIZE;
+            const size = canvas.parentElement.clientWidth - 10;
+            canvas.width = size;
+            canvas.height = size;
+            cellSize = size / GRID_SIZE;
         }
-        
-        // Generate makanan di posisi random
+
         function generateFood() {
-            let validPosition = false;
-            let attempts = 0;
-            const maxAttempts = 100;
-            
-            while (!validPosition && attempts < maxAttempts) {
-                food.x = Math.floor(Math.random() * GRID_SIZE);
-                food.y = Math.floor(Math.random() * GRID_SIZE);
-                
-                // Cek apakah makanan tidak berada di badan ular
-                validPosition = !snake.some(segment => segment.x === food.x && segment.y === food.y);
-                attempts++;
-            }
-            
-            // Jika tidak ada posisi valid, game over (menang)
-            if (!validPosition) {
-                // Ular memenuhi seluruh grid - menang!
-                gameWon();
-            }
+            food = {
+                x: Math.floor(Math.random() * GRID_SIZE),
+                y: Math.floor(Math.random() * GRID_SIZE)
+            };
+            if (snake.some(s => s.x === food.x && s.y === food.y)) generateFood();
         }
-        
-        // Game loop
+
         function gameLoop() {
             if (!gameRunning) return;
-            
-            moveSnake();
-            checkCollision();
-            draw();
-        }
-        
-        // Gerakkan ular
-        function moveSnake() {
-            // Update direction
             direction = nextDirection;
-            
-            // Hitung posisi kepala baru
-            let newHead = { ...snake[0] };
-            
-            switch(direction) {
-                case 'RIGHT':
-                    newHead.x += 1;
-                    break;
-                case 'LEFT':
-                    newHead.x -= 1;
-                    break;
-                case 'UP':
-                    newHead.y -= 1;
-                    break;
-                case 'DOWN':
-                    newHead.y += 1;
-                    break;
-            }
-            
-            // Wrap around grid (tembus dinding)
-            if (newHead.x < 0) newHead.x = GRID_SIZE - 1;
-            if (newHead.x >= GRID_SIZE) newHead.x = 0;
-            if (newHead.y < 0) newHead.y = GRID_SIZE - 1;
-            if (newHead.y >= GRID_SIZE) newHead.y = 0;
-            
-            // Tambahkan kepala baru
-            snake.unshift(newHead);
-            
-            // Cek apakah makan makanan
-            if (newHead.x === food.x && newHead.y === food.y) {
-                // Tambah score
-                score += 1;
+            let head = {...snake[0]};
+
+            if (direction === 'RIGHT') head.x++;
+            else if (direction === 'LEFT') head.x--;
+            else if (direction === 'UP') head.y--;
+            else if (direction === 'DOWN') head.y++;
+
+            // Wall wrap
+            if (head.x < 0) head.x = GRID_SIZE - 1;
+            if (head.x >= GRID_SIZE) head.x = 0;
+            if (head.y < 0) head.y = GRID_SIZE - 1;
+            if (head.y >= GRID_SIZE) head.y = 0;
+
+            if (snake.some(s => s.x === head.x && s.y === head.y)) return gameOver();
+
+            snake.unshift(head);
+            if (head.x === food.x && head.y === food.y) {
+                score++;
                 updateScore();
-                
-                // Generate makanan baru
                 generateFood();
             } else {
-                // Hapus ekor jika tidak makan
                 snake.pop();
             }
+            draw();
         }
-        
-        // Cek tabrakan dengan tubuh sendiri
-        function checkCollision() {
-            const head = snake[0];
-            
-            // Cek apakah kepala menabrak tubuh (kecuali kepala sendiri)
-            for (let i = 1; i < snake.length; i++) {
-                if (head.x === snake[i].x && head.y === snake[i].y) {
-                    gameOver();
-                    break;
-                }
-            }
-        }
-        
-        // Game over
-        function gameOver() {
-            gameRunning = false;
-            if (gameInterval) clearInterval(gameInterval);
-            
-            finalScoreElement.textContent = score;
-            gameOverModal.style.display = 'flex';
-        }
-        
-        // Game menang (grid penuh)
-        function gameWon() {
-            gameRunning = false;
-            if (gameInterval) clearInterval(gameInterval);
-            
-            finalScoreElement.textContent = score;
-            // Bisa tambah pesan spesial untuk menang
-            gameOverModal.querySelector('h2').textContent = 'VICTORY! 🎉';
-            gameOverModal.style.display = 'flex';
-        }
-        
-        // Update score display
-        function updateScore() {
-            scoreElement.textContent = score;
-        }
-        
-        // Drawing function
+
         function draw() {
-            // Clear canvas
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Draw grid lines
-            ctx.strokeStyle = '#2a4a7a';
-            ctx.lineWidth = 1;
-            
-            for (let i = 0; i <= GRID_SIZE; i++) {
-                ctx.beginPath();
-                ctx.strokeStyle = '#3a5a8a';
-                ctx.lineWidth = 0.5;
-                
-                // Vertical lines
-                ctx.moveTo(i * cellSize, 0);
-                ctx.lineTo(i * cellSize, canvas.height);
-                
-                // Horizontal lines
-                ctx.moveTo(0, i * cellSize);
-                ctx.lineTo(canvas.width, i * cellSize);
-                
-                ctx.stroke();
-            }
-            
-            // Draw snake
-            snake.forEach((segment, index) => {
-                const x = segment.x * cellSize;
-                const y = segment.y * cellSize;
-                const padding = cellSize * 0.1;
-                const radius = cellSize * 0.3;
-                
-                // Gradient untuk efek 3D
-                const gradient = ctx.createRadialGradient(
-                    x + padding, y + padding, 0,
-                    x + cellSize/2, y + cellSize/2, cellSize/2
-                );
-                
-                if (index === 0) {
-                    // Kepala - warna lebih terang
-                    gradient.addColorStop(0, '#7bed9f');
-                    gradient.addColorStop(1, '#2ecc71');
-                    
-                    // Mata
-                    ctx.fillStyle = '#ffffff';
-                    ctx.beginPath();
-                    ctx.arc(x + cellSize * 0.3, y + cellSize * 0.3, cellSize * 0.1, 0, Math.PI * 2);
-                    ctx.arc(x + cellSize * 0.7, y + cellSize * 0.3, cellSize * 0.1, 0, Math.PI * 2);
-                    ctx.fill();
-                    
-                    ctx.fillStyle = '#000000';
-                    ctx.beginPath();
-                    ctx.arc(x + cellSize * 0.3, y + cellSize * 0.3, cellSize * 0.05, 0, Math.PI * 2);
-                    ctx.arc(x + cellSize * 0.7, y + cellSize * 0.3, cellSize * 0.05, 0, Math.PI * 2);
-                    ctx.fill();
-                } else {
-                    // Badan
-                    gradient.addColorStop(0, '#90ee90');
-                    gradient.addColorStop(1, '#27ae60');
-                }
-                
-                // Gambar badan ular
-                ctx.fillStyle = gradient;
-                ctx.beginPath();
-                ctx.roundRect(x + padding, y + padding, cellSize - padding*2, cellSize - padding*2, radius);
-                ctx.fill();
-                
-                // Tambah efek sisik
-                ctx.strokeStyle = '#1e8449';
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.arc(x + cellSize/2, y + cellSize/2, cellSize*0.2, 0, Math.PI * 2);
-                ctx.stroke();
-            });
-            
-            // Draw food (apel)
-            const foodX = food.x * cellSize;
-            const foodY = food.y * cellSize;
-            
-            // Efek glow
-            ctx.shadowColor = '#ff4757';
-            ctx.shadowBlur = 15;
-            
-            // Gambar apel
+            ctx.fillStyle = '#050c16';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Food
             ctx.fillStyle = '#ff4757';
             ctx.beginPath();
-            ctx.arc(foodX + cellSize/2, foodY + cellSize/2, cellSize*0.3, 0, Math.PI * 2);
+            ctx.arc((food.x * cellSize) + cellSize/2, (food.y * cellSize) + cellSize/2, cellSize/2.5, 0, Math.PI*2);
             ctx.fill();
-            
-            // Daun
-            ctx.fillStyle = '#2ecc71';
-            ctx.beginPath();
-            ctx.ellipse(foodX + cellSize*0.6, foodY + cellSize*0.3, cellSize*0.1, cellSize*0.15, 0, 0, Math.PI * 2);
-            ctx.fill();
-            
-            // Tangkai
-            ctx.fillStyle = '#8B4513';
-            ctx.fillRect(foodX + cellSize*0.45, foodY + cellSize*0.2, cellSize*0.1, cellSize*0.15);
-            
-            // Reset shadow
-            ctx.shadowBlur = 0;
-        }
-        
-        // Helper untuk rounded rectangle
-        CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
-            if (w < 2 * r) r = w / 2;
-            if (h < 2 * r) r = h / 2;
-            this.moveTo(x + r, y);
-            this.lineTo(x + w - r, y);
-            this.quadraticCurveTo(x + w, y, x + w, y + r);
-            this.lineTo(x + w, y + h - r);
-            this.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-            this.lineTo(x + r, y + h);
-            this.quadraticCurveTo(x, y + h, x, y + h - r);
-            this.lineTo(x, y + r);
-            this.quadraticCurveTo(x, y, x + r, y);
-            return this;
-        };
-        
-        // Event listeners untuk kontrol
-        function changeDirection(newDirection) {
-            if (!gameRunning) return;
-            
-            // Cegah ular berbalik arah
-            if (
-                (direction === 'RIGHT' && newDirection === 'LEFT') ||
-                (direction === 'LEFT' && newDirection === 'RIGHT') ||
-                (direction === 'UP' && newDirection === 'DOWN') ||
-                (direction === 'DOWN' && newDirection === 'UP')
-            ) {
-                return;
-            }
-            
-            nextDirection = newDirection;
-        }
-        
-        // Keyboard controls
-        document.addEventListener('keydown', (e) => {
-            e.preventDefault();
-            switch(e.key) {
-                case 'ArrowUp': changeDirection('UP'); break;
-                case 'ArrowDown': changeDirection('DOWN'); break;
-                case 'ArrowLeft': changeDirection('LEFT'); break;
-                case 'ArrowRight': changeDirection('RIGHT'); break;
-            }
-        });
-        
-        // Touch controls untuk mobile
-        document.getElementById('btnUp').addEventListener('click', () => changeDirection('UP'));
-        document.getElementById('btnDown').addEventListener('click', () => changeDirection('DOWN'));
-        document.getElementById('btnLeft').addEventListener('click', () => changeDirection('LEFT'));
-        document.getElementById('btnRight').addEventListener('click', () => changeDirection('RIGHT'));
-        
-        // Touch events untuk mencegah scroll
-        document.querySelectorAll('.ctrl-btn').forEach(btn => {
-            btn.addEventListener('touchstart', (e) => {
-                e.preventDefault();
+
+            // Snake
+            snake.forEach((s, i) => {
+                ctx.fillStyle = i === 0 ? '#ffd700' : '#2ecc71';
+                ctx.beginPath();
+                ctx.roundRect(s.x * cellSize + 2, s.y * cellSize + 2, cellSize - 4, cellSize - 4, 5);
+                ctx.fill();
             });
-        });
-        
-        // Restart game
-        function restartGame() {
-            gameOverModal.style.display = 'none';
-            gameOverModal.querySelector('h2').textContent = 'GAME OVER'; // Reset title
-            initGame();
         }
+
+        function gameOver() {
+            gameRunning = false;
+            clearInterval(gameInterval);
+            finalScoreElement.textContent = score;
+            gameOverModal.style.display = 'flex';
+        }
+
+        function updateScore() { scoreElement.textContent = score; }
+
+        function changeDir(d) {
+            if (d === 'UP' && direction !== 'DOWN') nextDirection = 'UP';
+            if (d === 'DOWN' && direction !== 'UP') nextDirection = 'DOWN';
+            if (d === 'LEFT' && direction !== 'RIGHT') nextDirection = 'LEFT';
+            if (d === 'RIGHT' && direction !== 'LEFT') nextDirection = 'RIGHT';
+        }
+
+        // Controls
+        document.getElementById('btnUp').onclick = () => changeDir('UP');
+        document.getElementById('btnDown').onclick = () => changeDir('DOWN');
+        document.getElementById('btnLeft').onclick = () => changeDir('LEFT');
+        document.getElementById('btnRight').onclick = () => changeDir('RIGHT');
+        document.getElementById('restartBtn').onclick = () => { gameOverModal.style.display = 'none'; initGame(); };
+        document.getElementById('restartModalBtn').onclick = () => { gameOverModal.style.display = 'none'; initGame(); };
         
-        document.getElementById('restartBtn').addEventListener('click', restartGame);
-        document.getElementById('restartModalBtn').addEventListener('click', restartGame);
-        
-        // Handle resize
-        window.addEventListener('resize', () => {
-            resizeCanvas();
-            if (gameRunning) draw();
+        window.addEventListener('keydown', e => {
+            if (e.key.includes('Arrow')) changeDir(e.key.replace('Arrow', '').toUpperCase());
         });
-        
-        // Swipe detection untuk mobile
-        let touchStartX = 0;
-        let touchStartY = 0;
-        
-        canvas.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            touchStartX = e.touches[0].clientX;
-            touchStartY = e.touches[0].clientY;
-        });
-        
-        canvas.addEventListener('touchend', (e) => {
-            e.preventDefault();
-            if (!touchStartX || !touchStartY) return;
-            
-            const touchEndX = e.changedTouches[0].clientX;
-            const touchEndY = e.changedTouches[0].clientY;
-            
-            const diffX = touchEndX - touchStartX;
-            const diffY = touchEndY - touchStartY;
-            
-            if (Math.abs(diffX) > Math.abs(diffY)) {
-                // Horizontal swipe
-                if (diffX > 0) {
-                    changeDirection('RIGHT');
-                } else {
-                    changeDirection('LEFT');
-                }
-            } else {
-                // Vertical swipe
-                if (diffY > 0) {
-                    changeDirection('DOWN');
-                } else {
-                    changeDirection('UP');
-                }
-            }
-            
-            touchStartX = 0;
-            touchStartY = 0;
-        });
-        
-        // Start game
+
         initGame();
     </script>
-    <div class="container">
-
-        
-        <h1 style="color: white;">Waduh! Halaman Hilang.</h1>
-<p style="color: white;">Sepertinya halaman yang kamu cari sudah pindah alamat atau sedang bersembunyi.</p>
-<br>
-        
-        <style>
-  .btn-capsule {
-    display: inline-block;
-    padding: 12px 28px;
-    background-color: #25D366; /* Warna khas WhatsApp */
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: sans-serif;
-    border-radius: 50px; /* Ini yang membuat bentuknya jadi kapsul */
-    transition: background-color 0.3s ease;
-  }
-
-  .btn-capsule:hover {
-    background-color: #128C7E; /* Warna saat tombol disorot (hover) */
-  }
-</style>
-
-<a href="https://wa.me/6285161808524?text=Halo,%20saya%20menemukan%20halaman%20404%20di%20website%20Anda." 
-   class="btn-capsule" 
-   target="_blank">
-   WhatsApp Mas Zumar Saja
-</a>
-    </div>
-
 </body>
 </html>
