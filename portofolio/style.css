@@ -24,6 +24,13 @@
   --meteor-core-b: rgba(86, 224, 198, 0.82);
   --meteor-head-a: rgba(255, 255, 255, 0.98);
   --meteor-head-b: rgba(138, 220, 255, 0.84);
+  --chat-bubble-bg: #f1f4f8;
+  --chat-bubble-bg-2: #eef3f8;
+  --chat-bubble-ring: #d4deea;
+  --chat-bubble-shadow: rgba(18, 46, 88, 0.22);
+  --chat-bubble-name: #1a3553;
+  --chat-bubble-text: #314a66;
+  --chat-bubble-tail: #f1f4f8;
   --radius-xl: 22px;
   --radius-lg: 16px;
   --radius-md: 12px;
@@ -109,6 +116,13 @@ html.theme-dark {
   --meteor-core-b: rgba(186, 230, 255, 0.85);
   --meteor-head-a: rgba(255, 255, 255, 0.96);
   --meteor-head-b: rgba(196, 236, 255, 0.88);
+  --chat-bubble-bg: #edf3fb;
+  --chat-bubble-bg-2: #e5eef9;
+  --chat-bubble-ring: #a7c1de;
+  --chat-bubble-shadow: rgba(1, 10, 22, 0.45);
+  --chat-bubble-name: #173656;
+  --chat-bubble-text: #355675;
+  --chat-bubble-tail: #edf3fb;
 }
 
 html.theme-dark {
@@ -2322,6 +2336,99 @@ body.rtl .timeline-item:nth-child(even)::after {
   z-index: 2;
 }
 
+.floating-chat {
+  position: absolute;
+  width: min(270px, 42vw);
+  pointer-events: none;
+  z-index: 3;
+  will-change: transform;
+  animation: chatFloatOnly 5.8s ease-in-out infinite;
+}
+
+.chat-bubble {
+  position: relative;
+  border-radius: 18px;
+  padding: 0.84rem 0.96rem;
+  overflow: hidden;
+  border: 1px solid var(--chat-bubble-ring);
+  background: var(--chat-bubble-bg);
+  box-shadow: 0 10px 18px var(--chat-bubble-shadow);
+}
+
+.chat-bubble::before,
+.chat-bubble::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.chat-bubble::before {
+  content: none;
+}
+
+.chat-bubble::after {
+  width: 0;
+  height: 0;
+  border-top: 16px solid var(--chat-bubble-tail);
+}
+
+.chat-name {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--chat-bubble-name);
+  line-height: 1.2;
+  margin-bottom: 0.32rem;
+}
+
+.chat-message {
+  font-size: 0.86rem;
+  font-weight: 650;
+  color: var(--chat-bubble-text);
+  line-height: 1.34;
+  text-wrap: pretty;
+}
+
+.chat-name,
+.chat-message {
+  position: relative;
+  z-index: 1;
+}
+
+.floating-chat-left {
+  left: calc(50% - 335px);
+  top: 12px;
+}
+
+.floating-chat-left .chat-bubble::after {
+  right: 14px;
+  bottom: -16px;
+  border-left: 26px solid transparent;
+}
+
+.floating-chat-right {
+  right: calc(50% - 335px);
+  top: -28px;
+  animation-duration: 6.4s;
+  animation-delay: 1.1s;
+}
+
+.floating-chat-right .chat-bubble::after {
+  left: 14px;
+  bottom: -16px;
+  border-right: 26px solid transparent;
+}
+
+@keyframes chatFloatOnly {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -9px, 0);
+  }
+}
+
 .hero-photo {
   display: flex;
   align-items: center;
@@ -2396,6 +2503,20 @@ body.rtl .timeline-item:nth-child(even)::after {
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
+
+  .floating-chat {
+    width: min(230px, 46vw);
+  }
+  
+  .floating-chat-left {
+    left: calc(50% - 280px);
+    top: 8px;
+  }
+  
+  .floating-chat-right {
+    right: calc(50% - 280px);
+    top: -18px;
+  }
   
   .hero-photo-wrapper {
     margin-bottom: 0.5rem;
@@ -2408,6 +2529,51 @@ body.rtl .timeline-item:nth-child(even)::after {
 }
 
 @media (max-width: 680px) {
+  .floating-chat {
+    width: min(178px, 44vw);
+  }
+
+  .chat-bubble {
+    border-radius: 16px;
+    padding: 0.62rem 0.74rem;
+  }
+
+  .chat-bubble::after {
+    border-top-width: 12px;
+  }
+
+  .chat-name {
+    font-size: 0.78rem;
+    margin-bottom: 0.24rem;
+  }
+
+  .chat-message {
+    font-size: 0.72rem;
+    line-height: 1.28;
+  }
+
+  .floating-chat-left {
+    left: 4px;
+    top: -8px;
+  }
+
+  .floating-chat-left .chat-bubble::after {
+    right: 10px;
+    bottom: -12px;
+    border-left-width: 18px;
+  }
+
+  .floating-chat-right {
+    right: 4px;
+    top: -16px;
+  }
+
+  .floating-chat-right .chat-bubble::after {
+    left: 10px;
+    bottom: -12px;
+    border-right-width: 18px;
+  }
+
   .photo-frame {
     width: 170px;
     height: 170px;
@@ -2415,6 +2581,20 @@ body.rtl .timeline-item:nth-child(even)::after {
   
   .hero-photo-wrapper {
     margin-bottom: 0.25rem;
+  }
+}
+
+@media (pointer: coarse) {
+  .chat-bubble {
+    box-shadow: 0 8px 14px var(--chat-bubble-shadow);
+  }
+
+  .floating-chat {
+    animation-duration: 6.6s;
+  }
+
+  .floating-chat-right {
+    animation-duration: 7s;
   }
 }
 
