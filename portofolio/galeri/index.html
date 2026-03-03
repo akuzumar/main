@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr" class="theme-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri | Fairuz Zumar</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.svg" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../detail-pages.css" />
+    <script src="../bahasaindonesia.js" defer></script>
+    <script src="../bahasainggris.js" defer></script>
+    <script src="../bahasaarab.js" defer></script>
+    <script src="../detail-i18n.js" defer></script>
+    <script src="../gallery-data.js" defer></script>
+    <script src="../script.js" defer></script>
+  </head>
+  <body class="theme-dark">
+    <div class="bg-motion" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-stars" aria-hidden="true"></div>
+    <div class="bg-meteor" aria-hidden="true">
+      <span class="meteor-trail meteor-trail-a"></span>
+      <span class="meteor-trail meteor-trail-b"></span>
+      <span class="meteor-trail meteor-trail-c"></span>
+    </div>
+
+    <header class="navbar detail-navbar" id="top">
+      <div class="container">
+        <div class="nav-inner">
+          <div class="nav-section nav-left">
+            <a href="../" class="brand" data-i18n="brand">Fairuz Zumar</a>
+          </div>
+
+          <div class="nav-section nav-center">
+            <nav class="nav-links" id="nav-links" aria-label="Primary Navigation">
+              <a href="../" data-i18n="navHome">Beranda</a>
+              <a href="../keahlian" data-i18n="navSkills">Keahlian</a>
+              <a href="../kontribusi" data-i18n="navProjects">Kontribusi</a>
+              <a href="../pengabdian" data-i18n="navExperience">Pengabdian</a>
+              <a href="../sertifikat" data-i18n="navCertificates">Sertifikat</a>
+              <a href="../galeri" data-i18n="navGallery" class="is-current">Galeri</a>
+            </nav>
+          </div>
+
+          <div class="nav-section nav-right">
+            <div class="nav-tools">
+              <button
+                id="theme-toggle"
+                type="button"
+                class="theme-toggle"
+                aria-pressed="true"
+                aria-label="Aktifkan Mode Terang"
+                title="Aktifkan Mode Terang"
+              >
+                <span class="theme-icon theme-icon-sun" aria-hidden="true">&#9728;</span>
+                <span class="theme-icon theme-icon-moon" aria-hidden="true">&#9790;&#10022;</span>
+              </button>
+
+              <div class="mobile-lang" id="mobile-lang">
+                <button
+                  id="mobile-lang-toggle"
+                  type="button"
+                  class="mobile-lang-toggle"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-label="Pilih bahasa"
+                >
+                  <span id="mobile-lang-current">ID</span>
+                </button>
+                <div class="mobile-lang-menu" id="mobile-lang-menu" role="menu" aria-label="Language switcher">
+                  <button type="button" class="mobile-lang-btn active" data-lang="id" aria-pressed="true" role="menuitem">ID</button>
+                  <button type="button" class="mobile-lang-btn" data-lang="en" aria-pressed="false" role="menuitem">EN</button>
+                  <button type="button" class="mobile-lang-btn" data-lang="ar" aria-pressed="false" role="menuitem">AR</button>
+                </div>
+              </div>
+
+              <div class="lang-switcher" role="group" aria-label="Language switcher">
+                <button class="lang-btn active" data-lang="id" aria-pressed="true">ID</button>
+                <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+                <button class="lang-btn" data-lang="ar" aria-pressed="false">AR</button>
+              </div>
+
+              <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <span class="menu-line" aria-hidden="true"></span>
+                <span class="menu-line" aria-hidden="true"></span>
+                <span class="menu-line" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+  
+    <main class="detail-main">
+      <section class="section">
+        <div class="container">
+          <article class="detail-hero reveal">
+            <div class="detail-hero-grid">
+              <div>
+                <p class="badge-line">Halaman Galeri</p>
+                <h1>Galeri Visual Aktivitas</h1>
+                <p class="detail-lead">
+                  Halaman ini dibuat untuk upload foto terus-menerus dengan tata letak abstrak rapi yang konsisten. Kamu bisa
+                  menambahkan foto sebanyak yang kamu perlukan, kapan pun dibutuhkan, tanpa mengubah struktur desain galeri.
+                </p>
+              </div>
+
+              <div class="metric-grid">
+                <article class="metric-card">
+                  <p class="metric-value">Unlimited*</p>
+                  <p class="metric-label">Upload berulang</p>
+                </article>
+
+                <article class="metric-card">
+                  <p class="metric-value">Abstrak-Rapi</p>
+                  <p class="metric-label">Komposisi visual</p>
+                </article>
+
+                <article class="metric-card">
+                  <p class="metric-value">Auto Pattern</p>
+                  <p class="metric-label">Tatanan tetap konsisten</p>
+                </article>
+
+                <article class="metric-card">
+                  <p class="metric-value">Responsive</p>
+                  <p class="metric-label">Desktop dan mobile</p>
+                </article>
+              </div>
+            </div>
+          </article>
+          <article class="detail-hero detail-note-hero reveal">
+            <p class="badge-line detail-note-text">Catatan : Semua foto bisa diklik untuk melihat lebih jelas serta bisa melihat deskripsi dari foto</p>
+          </article>
+          
+          <article class="detail-section reveal">
+            <h2>Koleksi Galeri</h2>
+            <p class="detail-subtitle">
+              Tata letak foto otomatis mempertahankan pola abstrak rapi yang sama walaupun jumlah foto terus bertambah.
+            </p>
+            <div class="gallery-wall" id="gallery-wall" aria-live="polite"></div>
+          </article>
+
+          <article class="detail-section reveal">
+            <h2>Catatan Pemakaian</h2>
+            <div class="detail-grid">
+              <article class="detail-card">
+                <h3>Tambah Item Tanpa Batas Kode</h3>
+                <p>Kamu cukup menambah daftar item di <code>gallery-data.js</code> sebanyak yang kamu mau.</p>
+              </article>
+              <article class="detail-card">
+                <h3>Alur Simpel</h3>
+                <p>Tidak perlu API/database dulu. Cukup file gambar + 1 baris path di config galeri.</p>
+              </article>
+              <article class="detail-card">
+                <h3>Format Disarankan</h3>
+                <p>Gunakan rasio 16:10 atau 4:3 agar komposisi abstrak tetap rapi dan konsisten di semua ukuran layar.</p>
+              </article>
+            </div>
+
+            <div class="detail-cta">
+              <a href="../#contact" class="btn btn-primary">Hubungi Saya</a>
+              <a href="../keahlian/" class="btn btn-outline">Kembali ke Keahlian</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2026 Fairuz Zumar. Halaman galeri visual.</p>
+      </div>
+    </footer>
+  </body>
+</html>
