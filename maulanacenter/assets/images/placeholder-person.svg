@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f1ee"/>
+      <stop offset="1" stop-color="#e6d8d5"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#g)"/>
+  <circle cx="300" cy="220" r="90" fill="rgba(141,15,43,0.2)"/>
+  <rect x="170" y="320" width="260" height="180" rx="90" fill="rgba(141,15,43,0.2)"/>
+  <text x="50%" y="92%" text-anchor="middle" fill="#8d0f2b" font-size="22" font-family="Manrope, sans-serif">Foto Testimoni</text>
+</svg>
